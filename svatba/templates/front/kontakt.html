@@ -1,0 +1,22 @@
+<div class="center">
+    <h1 class="nadpis">Kontakt</h1>
+    <p class="text" style="line-height: 1.5em;">
+        Naše nová společná adresa je:<br />
+        Marie Chaloupská a Mikuláš Mrva<br />
+        Pod Kavalírkou 4<br />
+        150 00, Praha 5 - Košíře
+    </p>
+    <p class="text">
+        Pokud se chcete na cokoliv zeptat, rádi Vám odpovíme i e-mailem.
+    </p>
+    <form action="{% url 'message_update' %}" method="post">
+        {% csrf_token %}
+        <table class="contact-table">
+            <tr><td>Váš e-mail</td></tr>
+            <tr><td>{{ contactform.sender }}</td></tr>
+            <tr><td>Sdělení</td></tr>
+            <tr><td>{{ contactform.message }}</td></tr>
+            <tr><td><input type="submit" value="Odeslat" /></td></tr>
+        </table>
+    </form>
+</div>

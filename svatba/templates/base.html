@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Mařenka & Mikuláš se berou!</title>
+    <meta 
+name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+<![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Monsieur+La+Doulaise' rel='stylesheet' type='text/css'>
+  <link href="{% static 'css/screen.css' %}" media="screen, projection" rel="stylesheet" type="text/css" />
+   <link href="{% static 'css/print.css' %}" media="print" rel="stylesheet" type="text/css" />
+   <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+   <link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+      <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64337957-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+    <body>
+
+{% block content %}
+{% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>-->
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    {% block js_bottom %}
+    {% endblock %}
+  </body>
+</html>

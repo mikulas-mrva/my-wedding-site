@@ -1,0 +1,104 @@
+{% load staticfiles %}
+<div class="screen" id="logo">
+    <div class="dummy"></div>
+    <div class="logo-box center">
+        <img src="{% static 'img/logo_modre.svg' %}" class="responsive-svg-logo" onerror="this.src='tomato.png'; this.onerror=null;">
+    </div>
+</div>
+
+<div class="screen" id="oznameni">
+    <div class="box center">
+        <img src="{% static 'img/popis_iniciala.svg' %}" class="mensi-svg-logo" onerror="this.src='tomato.png'; this.onerror=null;">
+    </div>
+</div>
+<div class="_intermezzo">
+<img src="{% static 'img/fotky/intermezzo-2.jpg' %}" class="responsive-photo" />
+</div>
+<div class="screen" id="info">
+    <div class="center">
+        <h1 class="nadpis">Cesta do sv. Jiljí</h1>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.06702331661!2d14.418315999999995!3d50.08503199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94eedfb9eb4f%3A0x7c4195e44d139630!2sKostel+sv.Jilj%C3%AD!5e0!3m2!1scs!2sus!4v1435019315968" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <p class="misto-text">
+            Nejbližší stanice MHD: metro B Národní třída, metro A Staroměstská, tramvaj č. 6, 9, 17, 18 a 22 Národní divadlo
+        </p>
+        <p class="misto-text">
+            Vřele doporučujeme vyhradit si pár minut na obvyklé bloudění v uličkách Starého Města.
+        </p>
+        <p class="misto-text">
+            Jelikož se nacházíme v centru města, parkování bude velmi obtížné a cestu autem nemůžeme doporučit. V případě nezbytnosti nás kontaktujte.
+        </p>
+    </div>
+</div>
+<div class="_intermezzo-1">
+<img src="{% static 'img/fotky/intermezzo-1.jpg' %}" class="responsive-photo" />
+</div>
+<div class="screen" id="harmonogram">
+    <div class="center">
+        <h1 class="nadpis">Harmonogram svatebního dne</h1>
+        <table class="schedule">
+            <tr>
+                <td class="cas">11:00</td>
+                <td>Svatební obřad se mší svatou<br />(celebruje Ludvík Grundman OP).</td>
+            </tr>
+            <tr>
+                <td class="cas">12:20</td>
+                <td>Konec obřadu, čas na případné gratulace od těch, kteří nejdou na party<br />
+                (prosíme ty, kteří pozváni jsou, aby své gratulace rozložili do celého odpoledne).</td>
+            </tr>
+            <tr>
+                <td class="cas">12:30</td>
+                <td>Svatební party v ambitech a barokním refektáři dominikánského kláštera pro ty z vás, které jsme měli možnost pozvat<br />
+                (obdrželi jste spolu s oznámením i pozvánku na party).</td>
+            </tr>
+            <tr>
+                <td class="cas">13:00</td>
+                <td>Novomanželé a nejbližší rodina se přesouvají na rodinný oběd.</td>
+            </tr>
+            <tr>
+                <td class="cas">13:00</td>
+                <td>Oběd pro hosty na party (grilování a DIY raut).</td>
+            </tr>
+            <tr>
+                <td class="cas">14:30</td>
+                <td>Novomanželé s rodinou se vrací na party.</td>
+            </tr>
+            <tr>
+                <td class="cas">15:00</td>
+                <td>Krájení svatebního dortu.</td>
+            </tr>
+            <tr>
+                <td class="cas">17:00</td>
+                <td>Tanec novomanželů.</td>
+            </tr>
+            <tr>
+                <td class="cas">17:05</td>
+                <td>Kapela Stratocluster hraje k poslechu a tanci.</td>
+            </tr>
+            <tr>
+                <td class="cas">22:00</td>
+                <td>Ztišení a začátek úklidu<br />(respektujeme život v klášteře).</td>
+            </tr>
+            <tr>
+                <td class="cas">23:00</td>
+                <td>Afterparty z vlastní kapsy<br />
+                (místo včas upřesníme a zarezervujeme).</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="_intermezzo">
+<img src="{% static 'img/fotky/intermezzo-4.jpg' %}" class="responsive-photo" />
+</div>
+<div class="" id="dary">
+    <div class="center">
+{% include "presents/present_list.html" %}
+    </div>
+</div>
+<div class="_intermezzo">
+<img src="{% static 'img/fotky/intermezzo-3.jpg' %}" class="responsive-photo" />
+</div>
+<div class="" id="kontakt">
+{% include "front/kontakt.html" %}
+</div>

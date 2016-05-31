@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="screen">
+    <div class="rsvp-box center">
+        <h1 class="nadpis">díky!</h1>
+        <p class="pozvani">
+            Srdečně Vás zveme i svatební party, která začne ihned po skončení obřadu v ambitech a barokním refektáři dominikánského kláštera při kostele sv. Jiljí.<br />
+            Jelikož jsme studenti a na party bychom rádi pozvali co nejvíce lidí, budeme velice vděčni za jakoukoliv pomoc s přípravou jídla.<br />
+            Pokud nám chcete pomoci, zaškrtněte prosím políčko "Rád/a pomůžu" a naše koordinátorky se Vám ozvou.
+        </p>
+        <form action="{% url 'visitor_update' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <table class="rsvp-table">
+                    <tr><td>{{ form.email.label }}</td><td>{{ form.email }}</td></tr>
+                    <tr><td>{{ form.name.label }}</td><td>{{ form.name }}</td></tr>
+                    <tr><td>{{ form.attending.label }} </td><td>{{ form.attending }}</td></tr>
+                    <tr class="attending-only"><td>{{ form.baker.label }} </td><td>{{ form.baker }}</td></tr>
+                    <tr class="attending-only"><td>{{ form.vegan.label }}</td><td>{{ form.vegan }}</td></tr>
+                    <tr class="attending-only"><td>{{ form.vegetarian.label }}</td><td>{{ form.vegetarian }}</td></tr>
+                    <tr class="attending-only"><td>{{ form.gluten_free.label }}</td><td>{{ form.gluten_free }}</td></tr>
+                    <tr><td></td><td><input type="submit" value="Potvrdit" /></td></tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

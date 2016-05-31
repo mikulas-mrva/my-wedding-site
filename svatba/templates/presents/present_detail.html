@@ -1,0 +1,19 @@
+<div class="dar-box">
+    <h1 class="dar">{{ object.name }}</h1>
+    {% if object.link %}
+    Ideálně <a href="{{ object.link }}" target="_blank">{{ object.tento }}</a>.
+    {% endif %}
+    <p class="dar-popis">{{ object.description }}</p>
+    {% if object.is_taken %}
+        <p>Omlouváme se, tento dar má již zarezervován někdo jiný.
+    {% else %}
+    <form action="{% url 'person_update' %}" method="post">
+        {% csrf_token %}
+        {{ form.present }}
+        <table class="present-table">
+            <tr><td>váš e-mail:</td><td></td></tr>
+            <tr><td>{{ form.email }}</td><td><input type="submit" value="Zarezervovat" /></td></tr>
+        </table>
+    </form>
+    {% endif %}
+</div>

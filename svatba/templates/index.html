@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "front/menu.html" %}
+    {% include "front/index.html" %}
+{% endblock %}
+
+
+{% block js_bottom %}
+{% if request.GET.urlencode == 'potkame-se=' %}
+<script>
+if (!readCookie("prijde-na-svatbu")) {
+    $(document).ready(function() {
+        $.fancybox.open([
+            {
+                content : '<h2 style="margin: 16px; color: black; font-size: 24px;">Děkujeme za potvrzení účasti!</h2>',
+                openEffect	: 'fade',
+                closeEffect	: 'fade',
+                width: 300
+            }
+        ], {
+            padding : 0
+        });
+    });
+    createCookie("prijde-na-svatbu", 1, 80);
+    setTimeout( function() {$.fancybox.close();},3000);
+}
+</script>
+{% endif %}
+
+{% endblock %}

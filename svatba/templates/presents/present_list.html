@@ -1,0 +1,16 @@
+<h1 class="nadpis">dary</h1>
+<p class="text">
+    Pokud byste nás chtěli obdarovat i něčím dalším než svou přítomností, připravili jsme pro vás seznam věcí, které nám do začátku pomůžou nejvíce.
+</p>
+<div class="columns">
+    <ul class="presents">
+    {% for present in object_list %}
+        <!--  class="taken" -->
+        {% if present.is_taken %}
+        <li class="taken">{{ present.name }}</li>
+        {% else %}
+        <li><a class="present-button" data-present-slug="{{ present.slug }}" href="/dary/{{ present.slug }}">{{ present.name }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</div>
